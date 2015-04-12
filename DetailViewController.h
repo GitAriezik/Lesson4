@@ -10,10 +10,14 @@
 
 @interface DetailViewController : UIViewController
 
+@property (strong, nonatomic) NSString *string_MainValue;
+@property (strong, nonatomic) NSString *string_Price;
+@property (strong, nonatomic) NSString *string_Discr;
+
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView_DetailItem;
 @property (strong, nonatomic) IBOutlet UILabel *label_MainValue;
-
 @property (strong, nonatomic) IBOutlet UILabel *label_Price;
-
 @property (strong, nonatomic) IBOutlet UITextView *textView_Discr;
 
 

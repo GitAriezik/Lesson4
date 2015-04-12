@@ -19,8 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
+    self.label_MainValue.text =self.string_MainValue;
+    self.textView_Discr.text =self.string_Discr;
+    self.label_Price.text = [NSString stringWithFormat:@"Цена - %@", self.string_Price];
+    
+    
+    UIImage * image = [UIImage imageNamed: [NSString stringWithFormat:@"%@.jpg", self.string_MainValue]];
+    
+    
+    
+    self.imageView_DetailItem.image = image;
     
 }
 
@@ -29,14 +38,9 @@
    
 }
 
-/*
-#pragma mark - Navigation
+-(void) viewDidDisappear:(BOOL)animated {
+    
+    self.imageView_DetailItem = nil;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
-
 @end

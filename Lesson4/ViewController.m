@@ -106,6 +106,7 @@
     
     cell.textLabel.text = [[self.arrayM objectAtIndex: indexPath.row]objectForKey:@"value"];
     cell.detailTextLabel.text = [[self.arrayM objectAtIndex:indexPath.row]objectForKey:@"price"];
+    
     return cell;
 }
 
@@ -114,9 +115,16 @@
    
     DetailViewController *  detal = [self.storyboard
                                      instantiateViewControllerWithIdentifier:@"Detail"];
+    
+    NSDictionary * dict = [self.arrayM objectAtIndex:indexPath.row];
+    
+    detal.string_MainValue = [dict objectForKey:@"value"];
+    detal.string_Price = [dict objectForKey:@"price"];
+    detal.string_Discr = [dict objectForKey:@"discr"];
+    
     [self.navigationController pushViewController:detal animated:YES];
     
-    NSLog(@"indexPath %i", indexPath.row);
+    NSLog(@"indexPath %li", (long)indexPath.row);
     
 }
 
